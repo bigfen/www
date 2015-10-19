@@ -380,7 +380,8 @@ class Admin_model extends CI_Model
 		->join('marques', 'marques.marque_id = pc.pc_marque_id')
 		->join('tailles', 'tailles.taille_id = pc.pc_taille_ecran')
 		->join('rams', 'rams.ram_id = pc.pc_ram')
-		->join('cartesgraphique', 'cartesgraphique.cartegraph_id = pc.pc_carte') ;
+		->join('cartesgraphique', 'cartesgraphique.cartegraph_id = pc.pc_carte')
+		->join('processeurs', 'processeurs.processeur_id = pc.pc_proc') ;
 
 		$pcInfo = $this->db->get();	
 

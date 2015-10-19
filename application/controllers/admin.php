@@ -915,6 +915,8 @@ class Admin extends CI_Controller
 	function pc()
 	{
 		$this->form_validation->set_rules('inputPCLib', 'Libellé','trim|required|xss_clean');
+		$this->form_validation->set_rules('inputRamid', 'Ram','trim|required|xss_clean');
+		$this->form_validation->set_rules('InputPCCarte', 'Carte','trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCDescript', 'desription','trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCMarque', 'Marque', 'trim|required|xss_clean');		
 		$this->form_validation->set_rules('inputPCScore', 'Score', 'trim|required|xss_clean');
@@ -962,11 +964,13 @@ class Admin extends CI_Controller
 				$imageData = $this->upload->data() ; 
 
 				$data = array(
-					'pc_lib' =>$this->input->post('inputPCLib'),				
+					'pc_lib' =>$this->input->post('inputPCLib'),
+					'pc_ram' =>$this->input->post('inputRamid'),	
+					'pc_carte' =>$this->input->post('InputPCCarte'),			
 					'pc_descript' =>$this->input->post('inputPCDescript'),
 					'pc_marque_id' =>$this->input->post('inputPCMarque'),	
 					'pc_img_path' => $imageData['file_name'], 
-					'pc_ipj' =>$this->input->post('inputPCIpj'),
+					'pc_ipj' =>$this->input->post('inputPCIpj'),	
 					'pc_score' =>$this->input->post('inputPCScore'),
 					'pc_categorie' =>$this->input->post('InputPCCat'),
 					'pc_gamer' =>$this->input->post('inputPCGamer'),				
@@ -987,14 +991,16 @@ class Admin extends CI_Controller
 			$data['heading'] = 'Panneau d\'administration | PC';
 			$data['title'] = 'Les pc';	
 			$data['content'] = 'admin_pc';	
-			$data['row'] = $this->admin_model->readPc();
-			$data['lien1'] = $data['row']; 
-			$data['row2'] = $this->admin_model->readPc();
+			$data['row'] = $this->admin_model->getAllPc();
+			// print '<pre>' ; print_r($data['row']) ; die ; 			
+			$data['row2'] = $this->admin_model->readPc();	
 			$data['rowCateg'] = $this->admin_model->readCate();
 			$data['rowMarque'] = $this->admin_model->readMarque();
 			$data['rowTaille'] = $this->admin_model->readTaille();
 			$data['rowRam'] = $this->admin_model->readRam();
-			$data['rowCarte'] = $this->admin_model->readCarte(); 
+			$data['rowCarte'] = $this->admin_model->readCarte();
+			$data['rowproc'] = $this->admin_model->readProcesseur();
+			$data['rowrot'] = $this->admin_model->readRotation(); 
 			$this->load->view('admin/adminTemplate',$data);
 		}		
 	}
@@ -1023,7 +1029,8 @@ class Admin extends CI_Controller
 				//car le formulaire passe deja la validation a part l'upload d'image
 				//préparation des données à enregistrer
 				$data = array(
-					'pc_lib' =>$this->input->post('inputPCLib'),				
+					'pc_lib' =>$this->input->post('inputPCLib'),
+					'pc_ram' =>$this->input->post('inputPCram'),				
 					'pc_descript' =>$this->input->post('inputPCDescript'),
 					'pc_marque_id' =>$this->input->post('inputPCMarque'),	
 					//'pc_img_path' => $imageData['file_name'], //N'enregistre pas info image

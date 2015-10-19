@@ -370,22 +370,21 @@ class Admin_model extends CI_Model
 		}
 	}
 
-	//fais une jointure entre pc et catégories/marques/tailles
+	//fais une jointure entre pc et catégories/marques/tailles/ram
 	function getAllPc()
 	{
-		/*$this->db->order_by('pc_lib', 'asc');	
+		$this->db->order_by('pc_lib', 'asc');	
 		$this->db->select('*')
 		->from('pc')
 		->join('categories', 'categories.categorie_id = pc.pc_categorie')
 		->join('marques', 'marques.marque_id = pc.pc_marque_id')
-		->join('tailles', 'tailles.taille_id = pc.pc_taille_ecran') ;	*/
+		->join('tailles', 'tailles.taille_id = pc.pc_taille_ecran')
+		->join('rams', 'rams.ram_id = pc.pc_ram')
+		->join('cartesgraphique', 'cartesgraphique.cartegraph_id = pc.pc_carte') ;
 
-		//$pcInfo = $this->db->query('SELECT * FROM pc join categories on pc.pc_categorie = categories.categorie_id join marques on marques.marque_id = pc.pc_marque_id join tailles on tailles.taille_id = pc.pc_taille_ecran order by pc_lib ASC') ; 
-		$pcInfo = $this->db->get('pc');
-					
-		//$pcInfo = $this->db->get();
+		$pcInfo = $this->db->get();	
 
-		if ($pcInfo->num_rows()>0)
+		if ($pcInfo->num_rows>0)
 		{
 			foreach ($pcInfo->result() as $row)
 			{

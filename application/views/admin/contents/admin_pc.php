@@ -25,10 +25,10 @@
 
 <div class="form-group">
   <div class = "row">
-    <?php echo form_error('inputRamLib','<div class = "row"> <div class="alert alert-danger " role="alert">','</div></div>');?>
-    <label for="inputRamLib" class="control-label col-xs-2">Ram</label>    
+    <?php echo form_error('inputRamid','<div class = "row"> <div class="alert alert-danger " role="alert">','</div></div>');?>
+    <label for="inputRamid" class="control-label col-xs-2">Ram</label>    
     <div class="col-xs-10">
-      <select class="form-control" name = "Ram">
+      <select class="form-control" name = "inputRamid">
           <option selected="selected">Choisissez une Ram</option>
           <?php if($rowRam) : ?>
             <?php foreach($rowRam as $RamSelect) : ?>
@@ -49,6 +49,38 @@
           <?php if($rowCarte) : ?>
             <?php foreach($rowCarte as $carteSelect) : ?>
               <option value = "<?php echo $carteSelect->cartegraph_id ; ?>"><?php echo $carteSelect->cartegraph_lib?></option>
+          <?php endforeach ; endif ; ?>
+        </select>                 
+      </div>
+  </div>
+</div>
+
+<div class="form-group">
+   <div class = "row">
+      <?php echo form_error('InputPCproc','<div class = "row"><div class="alert alert-danger" role="alert">','</div></div>');?>
+      <label for="InputPCproc" class="control-label col-xs-2">Processeur</label>
+      <div class="col-xs-10">
+        <select class="form-control" name = "InputPCproc">
+          <option selected="selected">Choisissez un processeur</option>
+          <?php if($rowproc) : ?>
+            <?php foreach($rowproc as $procSelect) : ?>
+              <option value = "<?php echo $procSelect->processeur_id ; ?>"><?php echo $procSelect->processeur_lib?></option>
+          <?php endforeach ; endif ; ?>
+        </select>                 
+      </div>
+  </div>
+</div>
+
+<div class="form-group">
+   <div class = "row">
+      <?php echo form_error('InputPCrot','<div class = "row"><div class="alert alert-danger" role="alert">','</div></div>');?>
+      <label for="InputPCrot" class="control-label col-xs-2">Rotation</label>
+      <div class="col-xs-10">
+        <select class="form-control" name = "InputPCproc">
+          <option selected="selected">Choisissez une rotation</option>
+          <?php if($rowrot) : ?>
+            <?php foreach($rowrot as $rotSelect) : ?>
+              <option value = "<?php echo $rotSelect->rotation_id ; ?>"><?php echo $rotSelect->rotation_vitesse?></option>
           <?php endforeach ; endif ; ?>
         </select>                 
       </div>
@@ -238,6 +270,8 @@
               <thead>
                 <tr>
                   <th>#</th>
+                  <th>Ram</th>
+                  <th>Carte graphique</th>
                   <th>Catégorie</th>
                   <th>Libellé</th>
                   <th>Description</th>   
@@ -262,14 +296,16 @@
                         foreach ($row as $infoPC): ?>                        
                             <tr>
                               <td><?php echo $infoPC->pc_id ; ?></td>
-                              <td><?php echo $infoPC->pc_categorie ; ?></td>
+                              <td><?php echo $infoPC->ram_lib ; ?></td>
+                              <td><?php echo $infoPC->cartegraph_lib ; ?></td>
+                              <td><?php echo $infoPC->categorie_lib ; ?></td>
                               <td><?php echo $infoPC->pc_lib ; ?></td>
                               <td><?php echo word_limiter($infoPC->pc_descript,5) ;  ?></td>
-                              <td><?php echo $infoPC->pc_marque_id ; ?></td>
+                              <td><?php echo $infoPC->marque_lib ; ?></td>
                               <td><?php echo $infoPC->pc_ipj ; ?></td>
                               <td><?php echo $infoPC->pc_score ; ?></td>
-                              <td><?php echo $infoPC->pc_gamer ; ?></td>
-                              <td><?php echo $infoPC->pc_taille_ecran ; ?></td>
+                              <td><?php echo $gamer=($infoPC->pc_gamer== 1)?'Oui': 'Non' ; ?></td>
+                              <td><?php echo $infoPC->taille_lib ; ?></td>
 <!--                               <td><?php //if(!empty($infoPC->pc_lien1)) : echo $infoPC->pc_lien1 ; endif ;  ?></td>
                               <td><?php //if(!empty($infoPC->pc_lien2)) : echo $infoPC->pc_lien2 ; endif ; ?></td>
                               <td><?php //if(!empty($infoPC->pc_lien3)) : echo $infoPC->pc_lien3 ; endif ; ?></td>

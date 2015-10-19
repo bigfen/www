@@ -273,6 +273,7 @@
                   <th>Ram</th>
                   <th>Carte graphique</th>
                   <th>Processeur</th>
+                  <th>Rotation</th>
                   <th>Catégorie</th>
                   <th>Libellé</th>
                   <th>Description</th>   
@@ -300,6 +301,7 @@
                               <td><?php echo $infoPC->ram_lib ; ?></td>
                               <td><?php echo $infoPC->cartegraph_lib ; ?></td>
                               <td><?php echo $infoPC->processeur_lib ; ?></td>
+                              <td><?php echo $infoPC->rotation_vitesse ; ?></td>
                               <td><?php echo $infoPC->categorie_lib ; ?></td>
                               <td><?php echo $infoPC->pc_lib ; ?></td>
                               <td><?php echo word_limiter($infoPC->pc_descript,5) ;  ?></td>

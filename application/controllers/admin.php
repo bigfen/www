@@ -918,6 +918,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('inputRamid', 'Ram','trim|required|xss_clean');
 		$this->form_validation->set_rules('InputPCCarte', 'Carte','trim|required|xss_clean');
 		$this->form_validation->set_rules('InputPCproc', 'Processeurs','trim|required|xss_clean');
+		$this->form_validation->set_rules('InputPCrot', 'Processeurs','trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCDescript', 'desription','trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCMarque', 'Marque', 'trim|required|xss_clean');		
 		$this->form_validation->set_rules('inputPCScore', 'Score', 'trim|required|xss_clean');
@@ -969,6 +970,7 @@ class Admin extends CI_Controller
 					'pc_ram' =>$this->input->post('inputRamid'),	
 					'pc_carte' =>$this->input->post('InputPCCarte'),			
 					'pc_proc' =>$this->input->post('InputPCproc'),			
+					'pc_rot' =>$this->input->post('InputPCrot'),			
 					'pc_descript' =>$this->input->post('inputPCDescript'),
 					'pc_marque_id' =>$this->input->post('inputPCMarque'),	
 					'pc_img_path' => $imageData['file_name'], 

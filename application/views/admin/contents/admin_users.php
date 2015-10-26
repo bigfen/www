@@ -69,15 +69,15 @@
                               <td><?php echo $infoUser->user_name ; ?></td>
                               <td><?php echo $infoUser->user_mail ; ?></td> 
                               <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="<?php echo site_url('admin/updateUtilisateur/'.$infoUser->user_id);?>">Editer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                 
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateUtilisateur/'.$infoUser->user_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
 
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deleteUtilisateur/'.$infoUser->user_id);?>">Supprimer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                 
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteUtilisateur/'.$infoUser->user_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
                             </td>  
                             </tr>
                 <?php endforeach; endif;?>

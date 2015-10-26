@@ -321,12 +321,12 @@
                               <td>
                                 <!-- <button type="button" class="btn btn-default btn-default"> -->
                                  
-                                    <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updatePc/'.$infoPC->pc_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
+                                  <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updatePc/'.$infoPC->pc_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
                                 <!-- </button> -->
 
                                 <!-- <button type="button" class="btn btn-default btn-default"> --> 
-                                     <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deletePc/'.$infoPC->pc_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a> 
-                                </button>
+                                    <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deletePc/'.$infoPC->pc_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a> 
+                                <!-- </button> -->
                             </td>  
                           </tr>
                 <?php endforeach; endif;?>  

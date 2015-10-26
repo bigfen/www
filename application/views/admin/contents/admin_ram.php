@@ -72,15 +72,15 @@
                     <td><?php echo $infoRam->ram_coeff ; ?></td> 
                     <td><?php echo $infoRam->ram_coeff_jeu ; ?></td> 
                     <td>
-                      <button type="button" class="btn btn-default btn-default">
-                          <span class="glyphicon glyphicon-pencil"></span> 
-                          <a href="<?php echo site_url('admin/updateRam/'.$infoRam->ram_id);?>">Editer</a>
-                      </button>
+                      <!-- <button type="button" class="btn btn-default btn-default"> -->
+                           
+                          <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateRam/'.$infoRam->ram_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
+                      <!-- </button> -->
 
-                      <button type="button" class="btn btn-default btn-default">
-                          <span class="glyphicon glyphicon-remove"></span> 
-                           <a href="<?php echo site_url('admin/deleteRam/'.$infoRam->ram_id);?>">Supprimer</a>
-                      </button>
+                      <!-- <button type="button" class="btn btn-default btn-default"> -->
+                           
+                           <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteRam/'.$infoRam->ram_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
+                      <!-- </button> -->
                   </td>  
                   </tr>
       <?php endforeach; endif;?>

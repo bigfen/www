@@ -106,15 +106,15 @@
                               <td><?php echo $infoJeu->ipprUltra ; ?></td>                              
                               <td><?php echo $infoJeu->jeu_img_path ; ?></td>
                               <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="<?php echo site_url('admin/updateJeu/'.$infoJeu->jeu_id);?>">Editer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                     
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateJeu/'.$infoJeu->jeu_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
 
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deleteJeu/'.$infoJeu->jeu_id);?>">Supprimer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                     
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteJeu/'.$infoJeu->jeu_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
                             </td>  
                             </tr>
                 <?php endforeach; endif;?>

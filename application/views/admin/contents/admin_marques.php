@@ -61,15 +61,15 @@
                               <td><?php echo $infoMarques->marque_img_path ; ?></td>                              
                                                            
                               <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="<?php echo site_url('admin/updateMarque/'.$infoMarques->marque_id);?>">Editer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                 
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateMarque/'.$infoMarques->marque_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
 
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deleteMarque/'.$infoMarques->marque_id);?>">Supprimer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default">
+                                </button> -->
+                                 
+                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteMarque/'.$infoMarques->marque_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
                             </td>  
                             </tr>
                 <?php endforeach; endif;?>

@@ -60,15 +60,15 @@
                               <td><?php echo $infoRotation->rotation_vitesse ; ?></td>                              
                               <td><?php echo $infoRotation->rotation_coeff ; ?></td>                              
                               <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="<?php echo site_url('admin/updateRotation/'.$infoRotation->rotation_id);?>">Editer</a>
+                                  
+                                  <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateRotation/'.$infoRotation->rotation_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span> </a>
+                               <!--  <button type="button" class="btn btn-default btn-default">
                                 </button>
 
                                 <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deleteRotation/'.$infoRotation->rotation_id);?>">Supprimer</a>
-                                </button>
+                                </button> -->
+                                   
+                                  <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteRotation/'.$infoRotation->rotation_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
                             </td>  
                             </tr>
                 <?php endforeach; endif;?>

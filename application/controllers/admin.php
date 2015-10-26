@@ -920,9 +920,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('InputPCproc', 'Processeurs','trim|required|xss_clean');
 		$this->form_validation->set_rules('InputPCrot', 'Processeurs','trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCDescript', 'desription','trim|required|xss_clean');
-		$this->form_validation->set_rules('inputPCMarque', 'Marque', 'trim|required|xss_clean');		
-		$this->form_validation->set_rules('inputPCScore', 'Score', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('inputPCIpj', 'IPJ', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('inputPCMarque', 'Marque', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCGamer', 'Gamer', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('InputPCCat', 'Categorie', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('inputPCTaille', 'Taille', 'trim|xss_clean');	
@@ -973,8 +971,7 @@ class Admin extends CI_Controller
 					'pc_rot' =>$this->input->post('InputPCrot'),			
 					'pc_descript' =>$this->input->post('inputPCDescript'),
 					'pc_marque_id' =>$this->input->post('inputPCMarque'),	
-					'pc_img_path' => $imageData['file_name'], 
-					'pc_ipj' =>$this->input->post('inputPCIpj'),	
+					'pc_img_path' => $imageData['file_name'], 						
 					'pc_score' =>$this->input->post('inputPCScore'),
 					'pc_categorie' =>$this->input->post('InputPCCat'),
 					'pc_gamer' =>$this->input->post('inputPCGamer'),				
@@ -998,6 +995,7 @@ class Admin extends CI_Controller
 			$data['row'] = $this->admin_model->getAllPc();
 			// print '<pre>' ; print_r($data['row']) ; die ; 			
 			$data['row2'] = $this->admin_model->readPc();	
+			// print '<pre>' ; print_r($data['row2']) ; die ; 	
 			$data['rowCateg'] = $this->admin_model->readCate();
 			$data['rowMarque'] = $this->admin_model->readMarque();
 			$data['rowTaille'] = $this->admin_model->readTaille();

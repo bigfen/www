@@ -250,8 +250,8 @@
 				$data['ratio'] 			= round($ratio,2) ; 
 
 				//calcul de lipj
-				$ipj = $coeffProcJeu * $coeffCarteJeu * $coeffRamJeu  * $qteHz ; 
-				$data['ipj'] = round($ipj,2) ; 
+				//$ipj = $coeffProcJeu * $coeffCarteJeu * $coeffRamJeu  * $qteHz ; 
+				//$data['ipj'] = round($ipj,2) ; 
 
 				//récupération des infos postés pour présentation
 				$data['processeur'] 	= $rowProc['rowProc']->processeur_lib ; 

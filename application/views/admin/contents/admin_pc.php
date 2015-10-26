@@ -278,8 +278,7 @@
                   <th>Catégorie</th>
                   <th>Libellé</th>
                   <th>Description</th>   
-                  <th>Marque</th>  
-                  <!-- <th>IPJ</th>   -->
+                  <th>Marque</th> 
                   <th>Score</th>
                   <th>Gamer</th>  
                   <th>taille ecran</th>
@@ -307,8 +306,9 @@
                               <td><?php echo $infoPC->pc_lib ; ?></td>
                               <td><?php echo word_limiter($infoPC->pc_descript,5) ;  ?></td>
                               <td><?php echo $infoPC->marque_lib ; ?></td>
-                              <!-- <td><?php // echo $infoPC->pc_ipj ; ?></td> -->
-                              <td><?php echo $infoPC->pc_score ; ?></td>
+                              <td><?php echo $infoPC->processeur_coeff_jeu * $infoPC->cartegraph_coeff_jeu * $infoPC->ram_coeff_jeu ; ?></td>                               
+                              <!-- <td><?php //echo $infoPC->pc_ipj ; ?></td> -->
+                              <!-- <td><?php //echo $infoPC->pc_score ; ?></td> -->
                               <td><?php echo $gamer=($infoPC->pc_gamer== 1)?'Oui': 'Non' ; ?></td>
                               <td><?php echo $infoPC->taille_lib ; ?></td>
                               <!-- <td><?php //if(!empty($infoPC->pc_lien1)) : echo $infoPC->pc_lien1 ; endif ;  ?></td>
@@ -319,14 +319,13 @@
 
                               <td><img height="42" width="42" src="http://127.0.0.1/Comparepc000/www/img/pc/<?php echo "$infoPC->pc_img_path";?>" alt="<?php echo "$infoPC->pc_img_path";?>"></td> 
                               <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="?php echo site_url('admin/updatePc/'.$infoPC->pc_id);?">Editer</a>
-                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-default"> -->
+                                 
+                                    <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updatePc/'.$infoPC->pc_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
+                                <!-- </button> -->
 
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deletePc/'.$infoPC->pc_id);?>">Supprimer</a>
+                                <!-- <button type="button" class="btn btn-default btn-default"> --> 
+                                     <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deletePc/'.$infoPC->pc_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a> 
                                 </button>
                             </td>  
                           </tr>

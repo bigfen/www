@@ -2,13 +2,12 @@
 
  <!-- FOOTER 
       =============================================================-->     
-      <footer>        
+      <div class="footer">        
         <p>&copy; 2014 Compare PC, Sté. &middot; <a href="#">Mentions légales</a> &middot; <a href="#">Conditions générales</a></p>
-      </footer>    
+      </div>    
         
   	<!-- script references -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    
+   
     <script src="<?php echo base_url();?>bootstrap/js/bootstrap.js"></script>
   </body>
 </html>

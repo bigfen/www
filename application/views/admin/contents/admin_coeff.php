@@ -1,4 +1,4 @@
-<div class="col-sm-9 col-md-10 main">
+<div class="col-sm-9 col-md-10 ">
 
 	<!--toggle sidebar button-->
 	<p class="visible-xs">
@@ -30,11 +30,14 @@
 					<td><?php echo $infoCoeff->coeff_nom ; ?></td>
 					<td><?php echo $infoCoeff->coeff_val ; ?></td>
 
-					<td>
-						<button type="button" class="btn btn-default btn-default">
-							<span class="glyphicon glyphicon-pencil"></span> 
-							<a href="<?php echo site_url('admin/updateCoeff/'.$infoCoeff->coeff_id);?>">Editer</a>
-						</button>	                     
+					<td>						
+						<a href="<?php echo site_url('admin/updateCoeff/'.$infoCoeff->coeff_id);?>">
+							<button type="button" class="btn btn-default btn-default">
+								<span class="glyphicon glyphicon-pencil"></span> 
+								Editer
+							</button>
+						</a>
+						                     
 					</td>  
 				</tr>
 			<?php endforeach; endif;?>

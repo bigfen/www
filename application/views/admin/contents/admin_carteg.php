@@ -9,8 +9,6 @@
     <br>
     <?php if (isset($title)) echo $title;?>    
 </h1>
-
-<div class="table-responsive">
   <?php echo form_open('admin/cartesgraphique/') ;?>
 
 <div class="form-group">
@@ -62,42 +60,46 @@
 </div>  
 
 <?php echo form_close() ;?>
-  <table id = "tableCarte" class="display table table-striped">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Libellé</th>
-        <th>Coefficient</th>   
-        <th>Coefficient dans le jeu</th>  
-        <th>Actions</th>               
-      </tr>
-    </thead>
 
-    <tbody>
-      <?php 
-          if ($row != null) : 
-              foreach ($row as $infoCarte): ?>
-                  <tr>
-                    <td><?php echo $infoCarte->cartegraph_id ; ?></td>
-                    <td><?php echo $infoCarte->cartegraph_lib ; ?></td>
-                    <td><?php echo $infoCarte->cartegraph_coeff ; ?></td>
-                    <td><?php echo $infoCarte->cartegraph_coeff_jeu ; ?></td>
-                    <td>
-                      <!-- <button type="button" class="btn btn-default btn-default"> -->
-                           
-                        <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateCarte/'.$infoCarte->cartegraph_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
-                      <!-- </button>
- -->
-                      <!-- <button type="button" class="btn btn-default btn-default"> -->
-                           
-                           <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteCarte/'.$infoCarte->cartegraph_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
-                      <!-- </button> -->
-                  </td>  
-                  </tr>
-      <?php endforeach; endif;?>
-    </tbody>
-  </table>
-</div>
+  <div class="table-responsive">
+    <table id = "tableCarte" class="display table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Libellé</th>
+          <th>Coefficient</th>   
+          <th>Coefficient dans le jeu</th>  
+          <th>Actions</th>               
+        </tr>
+      </thead>
 
+      <tbody>
+        <?php 
+            if ($row != null) : 
+                foreach ($row as $infoCarte): ?>
+                    <tr>
+                      <td><?php echo $infoCarte->cartegraph_id ; ?></td>
+                      <td><?php echo $infoCarte->cartegraph_lib ; ?></td>
+                      <td><?php echo $infoCarte->cartegraph_coeff ; ?></td>
+                      <td><?php echo $infoCarte->cartegraph_coeff_jeu ; ?></td>
+                      <td>
+                        
+                            <a href="<?php echo site_url('admin/updateCarte/'.$infoCarte->cartegraph_id);?>">
+                              <button type="button" class="btn btn-default btn-default">
+                              <span class="glyphicon glyphicon-pencil"></span> Editer
+                              </button>
+                            </a>
 
+                             <a href="<?php echo site_url('admin/deleteCarte/'.$infoCarte->cartegraph_id);?>">
+                                <button type="button" class="btn btn-default btn-default">
+                                  <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                </button>
+                              </a>
+                        
+                    </td>  
+                    </tr>
+        <?php endforeach; endif;?>
+      </tbody>
+    </table>
+  </div>
 </div>

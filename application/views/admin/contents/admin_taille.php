@@ -9,8 +9,8 @@
     <br>
     <?php if (isset($title)) echo $title;?>    
 </h1>
-<div class="table-responsive">
-  <?php echo form_open('admin/tailles') ;?>
+
+<?php echo form_open('admin/tailles') ;?>
 <h2>Ajouter une taille</h2>
 <div class="form-group">
   <div class = "row">
@@ -31,6 +31,8 @@
 </div>  
 
 <?php echo form_close() ;?>
+
+<div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -48,15 +50,19 @@
                     <td><?php echo $infoTaille->taille_id ; ?></td>
                     <td><?php echo $infoTaille->taille_lib ; ?></td>
                     <td>
-                      <!-- <button type="button" class="btn btn-default btn-default">
-                      </button> -->
-                       
-                      <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateTaille/'.$infoTaille->taille_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
-
-                      <!-- <button type="button" class="btn btn-default btn-default">
-                      </button> -->
-                       
-                      <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteTaille/'.$infoTaille->taille_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
+                     
+                          <a href="<?php echo site_url('admin/updateTaille/'.$infoTaille->taille_id);?>">
+                            <button type="button" class="btn btn-default btn-default">
+                              <span class="glyphicon glyphicon-pencil"></span>Editer
+                            </button>
+                          </a>
+                          
+                          <a href="<?php echo site_url('admin/deleteTaille/'.$infoTaille->taille_id);?>">
+                            <button type="button" class="btn btn-default btn-default">
+                              <span class="glyphicon glyphicon-remove"></span>Supprimer
+                           </button>
+                          </a>
+                     
                   </td>  
                   </tr>
       <?php endforeach; endif;?>

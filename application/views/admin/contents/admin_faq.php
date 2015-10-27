@@ -7,46 +7,9 @@
 
 <h1 class="page-header">
     <br>
-    <?php if (isset($title)) echo $title;?>    
+    <?php if (isset($title)) echo $title;?>       
 </h1>
-<div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Question</th>  
-                  <th>Réponse</th>    
-                  <th>Actions</th>               
-                </tr>
-              </thead>
 
-              <tbody>
-                <?php 
-                    if ($row != null) : 
-                        foreach ($row as $infoFaq): ?>
-                            <tr>
-                              <td><?php echo $infoFaq->faq_id ; ?></td>                              
-                              <td><?php echo $infoFaq->faq_quest ; ?></td> 
-                              <td><?php echo $infoFaq->faq_rep ; ?></td>                             
-                                                          
-                              <td>
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-pencil"></span> 
-                                    <a href="<?php echo site_url('admin/updateFaq/'.$infoFaq->faq_id);?>">Editer</a>
-                                </button>
-
-                                <button type="button" class="btn btn-default btn-default">
-                                    <span class="glyphicon glyphicon-remove"></span> 
-                                     <a href="<?php echo site_url('admin/deleteFaq/'.$infoFaq->faq_id);?>">Supprimer</a>
-                                </button>
-                            </td>  
-                            </tr>
-                <?php endforeach; endif;?>
-                
-  
-              </tbody>
-            </table>
-          </div>
 <?php echo form_open('admin/faq') ;?>
 
 <div class="form-group">
@@ -78,4 +41,47 @@
 </div>  
 
 <?php echo form_close() ;?>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Question</th>  
+          <th>Réponse</th>    
+          <th>Actions</th>               
+        </tr>
+      </thead>
+
+      <tbody>
+        <?php 
+            if ($row != null) : 
+                foreach ($row as $infoFaq): ?>
+                    <tr>
+                      <td><?php echo $infoFaq->faq_id ; ?></td>                              
+                      <td><?php echo $infoFaq->faq_quest ; ?></td> 
+                      <td><?php echo $infoFaq->faq_rep ; ?></td>                            
+                                   
+                      <td>
+                        <a href="<?php echo site_url('admin/updateFaq/'.$infoFaq->faq_id);?>">
+                          <button type="button" class="btn btn-default btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Editer
+                          </button>
+                        </a>
+
+                        <a href="<?php echo site_url('admin/deleteFaq/'.$infoFaq->faq_id);?>">
+                          <button type="button" class="btn btn-default btn-default">
+                            <span class="glyphicon glyphicon-remove"></span> Supprimer
+                          </button>
+                        </a>
+                        
+                    </td>  
+                    </tr>
+        <?php endforeach; endif;?>
+        
+
+      </tbody>
+    </table>
+  </div>
 </div>

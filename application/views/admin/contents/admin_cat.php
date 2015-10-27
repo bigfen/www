@@ -9,62 +9,66 @@
     <br>
     <?php if (isset($title)) echo $title;?>    
 </h1>
-<div class="table-responsive">
-  <?php echo form_open('admin/categories') ;?>
 
-<div class="form-group">
-  <div class = "row">
-    <?php echo form_error('inputCatLib','<div class = "row"> <div class="alert alert-danger " role="alert">','</div></div>');?>
-    <label for="inputCatLib" class="control-label col-xs-2">Libellé</label>          
-      <div class="col-xs-10">
-        <input type="text" class="form-control" name="inputCatLib" placeholder="Libellé">            
-      </div>   
-  </div>
-</div>    
+<?php echo form_open('admin/categories') ;?>
 
-<div class="form-group">  
-  <div class = "row">
-    <div class="col-xs-4">
-      <input type="submit" class="form-control" value = "Enregistrez">            
+  <div class="form-group">
+    <div class = "row">
+      <?php echo form_error('inputCatLib','<div class = "row"> <div class="alert alert-danger " role="alert">','</div></div>');?>
+      <label for="inputCatLib" class="control-label col-xs-2">Libellé</label>          
+        <div class="col-xs-10">
+          <input type="text" class="form-control" name="inputCatLib" placeholder="Libellé">            
+        </div>   
     </div>
+  </div>    
+
+  <div class="form-group">  
+    <div class = "row">
+      <div class="col-xs-4">
+        <input type="submit" class="form-control" value = "Enregistrez">            
+      </div>
+    </div>  
   </div>  
-</div>  
 
 <?php echo form_close() ;?>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Libellé</th>                    
-                  <th>Actions</th>               
-                </tr>
-              </thead>
 
-              <tbody>
-                <?php 
-                    if ($row != null) : 
-                        foreach ($row as $infoCat): ?>
-                            <tr>
-                              <td><?php echo $infoCat->categorie_id ; ?></td>                              
-                              <td><?php echo $infoCat->categorie_lib ; ?></td>                              
-                                                          
-                              <td>
-                                <!-- <button type="button" class="btn btn-default btn-default">
-                                </button> -->
-                                 
-                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateCategorie/'.$infoCat->categorie_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Libellé</th>                    
+          <th>Actions</th>               
+        </tr>
+      </thead>
 
-                                <!-- <button type="button" class="btn btn-default btn-default">
-                                </button> -->
-                                 
-                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteCategorie/'.$infoCat->categorie_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
-                            </td>  
-                            </tr>
-                <?php endforeach; endif;?>
-                
-  
-              </tbody>
-            </table>
-          </div>
+      <tbody>
+        <?php 
+            if ($row != null) : 
+                foreach ($row as $infoCat): ?>
+                    <tr>
+                      <td><?php echo $infoCat->categorie_id ; ?></td>                              
+                      <td><?php echo $infoCat->categorie_lib ; ?></td>                              
+                                                  
+                      <td>                        
+                        <a href="<?php echo site_url('admin/updateCategorie/'.$infoCat->categorie_id);?>">
+                          <button type="button" class="btn btn-default btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span> Editer
+                          </button>
+                        </a>
+                   
+                         <a href="<?php echo site_url('admin/deleteCategorie/'.$infoCat->categorie_id);?>">
+                           <button type="button" class="btn btn-default btn-default">
+                          <span class="glyphicon glyphicon-remove"></span> 
+                          Supprimer</button>
+                        </a>
+                        
+                    </td>  
+                    </tr>
+        <?php endforeach; endif;?>
+        
 
+      </tbody>
+    </table>
+  </div>
 </div>

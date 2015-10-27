@@ -9,8 +9,8 @@
     <br>
     <?php if (isset($title)) echo $title;?>    
 </h1>
-<div class="table-responsive">
-  <?php echo form_open_multipart('admin/jeux') ;?>
+
+<?php echo form_open_multipart('admin/jeux') ;?>
 
     <div class="form-group">
       <div class = "row">
@@ -81,6 +81,8 @@
 
     
 <?php echo form_close();?>
+
+<div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -106,15 +108,20 @@
                               <td><?php echo $infoJeu->ipprUltra ; ?></td>                              
                               <td><?php echo $infoJeu->jeu_img_path ; ?></td>
                               <td>
-                                <!-- <button type="button" class="btn btn-default btn-default">
-                                </button> -->
-                                     
-                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/updateJeu/'.$infoJeu->jeu_id);?>">Editer <span class="glyphicon glyphicon-pencil"></span></a>
-
-                                <!-- <button type="button" class="btn btn-default btn-default">
-                                </button> -->
-                                     
-                                <a class="btn btn-default btn-default" href="<?php echo site_url('admin/deleteJeu/'.$infoJeu->jeu_id);?>">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
+                                
+                                <a href="<?php echo site_url('admin/updateJeu/'.$infoJeu->jeu_id);?>">
+                                  <button type="button" class="btn btn-default btn-default">
+                                    <span class="glyphicon glyphicon-pencil"></span> Editer
+                                  </button>
+                                </a>
+                                
+                                 <a href="<?php echo site_url('admin/deleteJeu/'.$infoJeu->jeu_id);?>">
+                                  <button type="button" class="btn btn-default btn-default">
+                                    <span class="glyphicon glyphicon-remove"></span> 
+                                    Supprimer
+                                  </button>
+                                </a>
+                                
                             </td>  
                             </tr>
                 <?php endforeach; endif;?>

@@ -1231,6 +1231,80 @@ function tailles()
 		}
 	}
 
+/******************************************************************************************************************************
+												CRUD FAQ
+*******************************************************************************************************************************/
+
+
+	function faq() {
+
+		$this->form_validation->set_rules('inputFaqQuest', 'Question', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('inputFaqRep', 'Réponse', 'trim|required|xss_clean');
+
+		if ( $this->form_validation->run() ) {
+			$data = array(
+				'faq_quest' => $this->input->post('inputFaqQuest'),
+				'faq_rep' =>  $this->input->post('inputFaqRep')
+			);
+
+			$this->admin_model->createFaq($data);
+			redirect('admin/faq') ; 
+		}
+		else{			
+			$data['heading'] = 'Panneau d\'administration |FAQ';
+			$data['title'] = 'FAQ';		
+			$data['content'] = 'admin_faq';
+			$data['row'] = $this->admin_model->readFaq();
+			$this->load->view('admin/adminTemplate',$data);
+		}
+
+	}
+
+	function updateFaq() {
+
+		if ($this->uri->segment(3)) 
+		{
+			$this->form_validation->set_rules('inputFaqQuest', 'Question', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('inputFaqRep', 'Réponse', 'trim|required|xss_clean');		
+
+			if ($this->form_validation->run())
+			{
+				$data = array(
+					'faq_quest' => $this->input->post('inputFaqQuest'),
+					'faq_rep' 	=> $this->input->post('inputFaqRep')
+				);
+
+				$this->admin_model->updateFaq($this->uri->segment(3), $data);
+				redirect('admin/faq') ; 
+			}
+			else
+			{
+				$data['heading'] 	= 'Panneau d\'administration | Les écrans';
+				$data['title'] 		= 'Modifier une taille ';
+				$data['content'] 	= 'admin_faq_update';			
+				$data['rowUpdate'] 	= $this->admin_model->getFaq($this->uri->segment(3));
+				$data['faqQuest'] 	= $data['rowUpdate']->faq_quest;									
+				$data['faqRep'] 	= $data['rowUpdate']->faq_rep;									
+				$this->load->view('admin/adminTemplate',$data);
+			}
+		}
+
+	}
+
+	function deleteFaq() {
+
+		if($this->uri->segment(3))
+		{
+			$this->admin_model->deleteFaq($this->uri->segment(3));
+			redirect('admin/faq');			
+		}
+
+		else{
+			redirect('admin');			
+		}
+
+	}
+
 	/******************************************************************************************************************************
 												CRUD coefficient
 *******************************************************************************************************************************/

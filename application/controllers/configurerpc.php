@@ -194,7 +194,7 @@
 				
 
 				$qteRam 			= $this->input->post('inputConfigQteRam') ;
-				$rowRam['rowRam'] 	=	$this->admin_model->getRam($this->input->post('inputConfigRam')) ;
+				$rowRam['rowRam'] 	= $this->admin_model->getRam($this->input->post('inputConfigRam')) ;
 				$coeffRam 			= $rowRam['rowRam']->ram_coeff ; 
 				$coeffRamJeu 		= $rowRam['rowRam']->ram_coeff_jeu ;
 

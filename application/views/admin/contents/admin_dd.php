@@ -10,7 +10,7 @@
     <?php if (isset($title)) echo $title;?>    
   </h1>
 
-  <?php echo form_open('admin/rotations',$attributes) ;?>
+  <?php echo form_open('admin/rotations') ;?>
 
   <div class="form-group">
     <div class = "row">

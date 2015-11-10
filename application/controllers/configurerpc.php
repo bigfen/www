@@ -1,6 +1,6 @@
 <?php
 	
-	class configurerPc extends CI_Controller
+	class configurerpc extends CI_Controller
 	{
 		function __construct()
 		{

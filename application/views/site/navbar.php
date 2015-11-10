@@ -18,10 +18,10 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <!--<li><a href="<?php echo site_url().'/comparepc' ; ?>">Comparer PC</a></li>-->
-                <li><a href="<?php echo site_url().'/configurerpc' ; ?>">Configurer PC</a></li>
-                <!--<li><a href="<?php echo site_url().'/compatibilitejeu' ; ?>">Compatibilité jeux-vidéos</a></li>    -->            
-                <!--<li><a href="<?php echo site_url().'/marquespc' ; ?>">Marques</a></li>-->
+                <li><a href="<?php echo site_url().'/comparepc' ; ?>">Comparer PC</a></li>
+                <li><a href="<?php echo site_url().'/configurerPc' ; ?>">Configurer PC</a></li>
+                <li><a href="<?php echo site_url().'/compatibilitejeu' ; ?>">Compatibilité jeux-vidéos</a></li>            
+                <li><a href="<?php echo site_url().'/marquespc' ; ?>">Marques</a></li>
                 <li><a href="<?php echo site_url().'/faq' ; ?>">FAQ</a></li>
                 <li><a href="<?php echo site_url().'/contact' ; ?>">Contactez-nous</a></li>
               </ul>

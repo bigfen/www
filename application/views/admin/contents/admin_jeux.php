@@ -106,7 +106,8 @@
                               <td><?php echo $infoJeu->ipprBas ; ?></td>
                               <td><?php echo $infoJeu->ipprHaut ; ?></td>
                               <td><?php echo $infoJeu->ipprUltra ; ?></td>                              
-                              <td><?php echo $infoJeu->jeu_img_path ; ?></td>
+                              <td><img with="50px" height="50px" src="<?php echo base_url().'bootstrap/img/games/'.$infoJeu->jeu_img_path ; ?>"></td>
+//zerg
                               <td>
                                 
                                 <a href="<?php echo site_url('admin/updateJeu/'.$infoJeu->jeu_id);?>">

@@ -317,7 +317,7 @@
                               <td><?php //if(!empty($infoPC->pc_lien4)) : echo $infoPC->pc_lien4 ; endif ; ?></td>
                               <td><?php// if(!empty($infoPC->pc_lien5)) : echo $infoPC->pc_lien5 ; endif ; ?></td>-->
 
-                              <td><img height="42" width="42" src="<?php echo base_url().'img/pc/'.$infoPC->pc_img_path;?>" alt="<?php echo "$infoPC->pc_img_path";?>"></td> 
+                              <td><img height="42" width="42" src="<?php echo base_url().'bootstrap/img/pc/'.$infoPC->pc_img_path;?>" alt="<?php echo "$infoPC->pc_img_path";?>"></td> 
                               <td>
                                 <!-- <button type="button" class="btn btn-default btn-default"> -->
                                  
